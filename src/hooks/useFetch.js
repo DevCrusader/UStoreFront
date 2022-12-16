@@ -56,36 +56,34 @@ const useFetch = (options) => {
 
     dispatch({ type: resultTypes.START_FETCH });
 
-    setTimeout(async () => {
-      axios({
-        url,
-        method,
-        data,
-        headers,
+    axios({
+      url,
+      method,
+      data,
+      headers,
+    })
+      .then((res) => {
+        if (!cancelRequest.current)
+          dispatch({
+            type: resultTypes.SET_DATA,
+            payload: res.data,
+          });
       })
-        .then((res) => {
-          if (!cancelRequest.current)
-            dispatch({
-              type: resultTypes.SET_DATA,
-              payload: res.data,
-            });
-        })
-        .catch((err) => {
-          if (!cancelRequest.current) {
-            dispatch({
-              type: resultTypes.SET_ERROR,
-              payload: {
-                message: err.message,
-                status: err.response.status,
-                additionalInfo:
-                  err.response.status === 400
-                    ? err.response.data
-                    : null,
-              },
-            });
-          }
-        });
-    }, 2 * 1000);
+      .catch((err) => {
+        if (!cancelRequest.current) {
+          dispatch({
+            type: resultTypes.SET_ERROR,
+            payload: {
+              message: err.message,
+              status: err.response.status,
+              additionalInfo:
+                err.response.status === 400
+                  ? err.response.data
+                  : null,
+            },
+          });
+        }
+      });
 
     return () => (cancelRequest.current = false);
   }, [options]);
