@@ -1,0 +1,110 @@
+.cart-item {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+
+  padding: 10px 0;
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  --photo-size: 150px;
+}
+
+.cart-item > .error {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  color: red;
+  text-align: center;
+  background-color: rgba(65, 65, 65, 0.8);
+}
+
+.cart-item > .item__photo {
+  aspect-ratio: 1 / 1;
+  width: var(--photo-size);
+}
+
+.cart-item > .item__photo > img {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.cart-item > .item__info {
+  width: calc(100% - var(--photo-size) - 25px - 30px);
+  align-self: flex-start;
+
+  display: flex;
+  flex-direction: column;
+  /* row-gap: 3px; */
+}
+
+.cart-item > .item__info > .number-with-icon {
+  margin-top: 10px;
+}
+
+.count-manage {
+  margin-top: 30px;
+
+  border: 1px solid #b7ada4;
+
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.count-manage > button {
+  appearance: none;
+  border: none;
+  background-color: var(--invisible-color);
+  border-style: solid;
+  border-color: inherit;
+
+  padding: 2px 10px;
+}
+.count-manage > .decrease-btn {
+  border-width: 0 1px 0 0;
+}
+
+.count-manage > .increase-btn {
+  border-width: 0 0 0 1px;
+}
+.count-manage > .count {
+  padding: 0 0.75em;
+  width: 3em;
+}
+
+.cart-item > .item__delete {
+  align-self: flex-start;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  row-gap: 59px;
+}
+
+.cart-item > .item__delete > button {
+  appearance: none;
+  border: none;
+  background-color: var(--invisible-color);
+
+  aspect-ratio: 1 / 1;
+  width: 25px;
+  background-image: url("../svg/DeleteItemIcon.svg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.cart-item > .item__delete > button:hover,
+.cart-item > .item__delete > button:disabled {
+  filter: opacity(0.8em);
+}

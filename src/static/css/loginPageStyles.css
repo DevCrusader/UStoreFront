@@ -1,0 +1,158 @@
+.login-page {
+  height: 95vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-page .password-visibility {
+  display: inline-block;
+  aspect-ratio: 1 / 1;
+  width: 1.5em;
+
+  transition-duration: 0.3s;
+
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.login-page .password-visibility:hover {
+  cursor: pointer;
+}
+
+.login-page .password-visibility.show {
+  background-image: url("../svg/ShowPassword.svg");
+}
+.login-page .password-visibility.hide {
+  background-image: url("../svg/HidePassword.svg");
+}
+
+.login-page > .login-form {
+  max-width: 540px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  row-gap: 20px;
+}
+
+.login-page > .login-form > .header {
+  text-align: center;
+}
+
+.login-page > .login-form > label {
+  width: 100%;
+}
+
+.login-page > .login-form input[type="text"],
+.login-page > .login-form input[type="password"] {
+  display: block;
+  width: 100%;
+
+  border-radius: 5px;
+
+  background-color: #f6f6f6;
+  box-sizing: border-box;
+  font-size: 1em;
+  padding: 15px 20px;
+}
+
+.login-page > .login-form .password-wrapper {
+  position: relative;
+}
+
+.login-page > .login-form .password-wrapper > .password-visibility {
+  position: absolute;
+  top: calc(50% - 0.75em);
+  left: calc(100% - 15px - 1.5em);
+}
+
+.login-page form button[type="submit"] {
+  appearance: none;
+  border: none;
+
+  border-radius: 5px;
+  padding: 10px 40px;
+
+  transition-duration: 0.5s;
+
+  background-color: var(--main-color);
+  color: white;
+}
+
+.login-page form button[type="submit"]:hover {
+  filter: opacity(0.9);
+}
+
+.login-page > .self-register-btn {
+  margin-top: 50px;
+  appearance: none;
+  border: none;
+
+  border-radius: 5px;
+  padding: 10px 40px;
+
+  transition-duration: 0.5s;
+
+  background-color: #cccccc;
+  color: #585858;
+}
+
+.login-page > .self-register-btn:hover {
+  background-color: #c3c3c3;
+}
+
+.login-page .self-register-form form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+}
+
+.login-page .self-register-form form label {
+  width: 100%;
+}
+
+.login-page .self-register-form form label > input {
+  display: block;
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  border-radius: 5px;
+
+  background-color: #f6f6f6;
+  box-sizing: border-box;
+  font-size: 1em;
+  padding: 15px 20px;
+}
+
+.login-page .self-register-form label.password-wrapper {
+  position: relative;
+}
+
+.login-page .self-register-form .footer {
+  height: 45px;
+}
+
+.login-page
+  .self-register-form
+  label.password-wrapper
+  > .password-visibility {
+  position: absolute;
+
+  top: calc(1em + 15px);
+  /* labelHeight + paddingTop */
+  left: calc(100% - 22px - 20px - 5px);
+  /* maxWitdh - iconWidth - padding - additional */
+}

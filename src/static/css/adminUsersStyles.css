@@ -1,0 +1,271 @@
+.admin-users > .user-registration {
+  margin: 0 0 20px;
+  border-radius: 15px;
+}
+
+.admin-users .user-registration-form form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.admin-users .user-registration-form form button[type="submit"] {
+  margin-top: 20px;
+}
+
+.admin-users .user-registration-form form > label {
+  width: 100%;
+}
+
+.admin-users .user-registration-form form input[type="text"],
+.admin-users .user-registration-form form input[type="number"] {
+  display: block;
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  border-radius: 5px;
+
+  background-color: #f6f6f6;
+  box-sizing: border-box;
+  font-size: 1em;
+  padding: 15px 20px;
+}
+
+.admin-users .user-registration-form form input[type="checkbox"] {
+  appearance: none;
+  border: none;
+  outline: none;
+
+  background-color: #f6f6f6;
+  border-radius: 5px;
+
+  aspect-ratio: 1 / 1;
+  height: 2em;
+}
+.admin-users
+  .user-registration-form
+  form
+  input[type="checkbox"]:hover {
+  cursor: pointer;
+}
+
+.admin-users
+  .user-registration-form
+  form
+  input[type="checkbox"]:checked {
+  background-color: var(--main-color);
+}
+
+.admin-users
+  .user-registration-form
+  form
+  input[type="text"]::placeholder,
+.admin-users
+  .user-registration-form
+  form
+  input[type="number"]::placeholder {
+  color: #c4c4c4;
+}
+
+.admin-users > .user-search > .users-wrapper {
+  display: grid;
+  padding-bottom: 20px;
+}
+
+.admin-users > .user-search > .search-field {
+  position: relative;
+
+  margin-bottom: 20px;
+}
+
+.admin-users > .user-search > .search-field > input[type="text"] {
+  width: 100%;
+  border: none;
+  border-radius: 15px;
+
+  font-size: 1em;
+  box-sizing: border-box;
+
+  padding: 15px 20px;
+  padding-right: 50px;
+}
+
+.admin-users
+  > .user-search
+  > .search-field
+  > input[type="text"]::placeholder {
+  color: #a0a0a0;
+}
+
+.admin-users > .user-search > .search-field > .icon {
+  display: block;
+
+  position: absolute;
+  top: calc(15px + 0.5em - 12.5px);
+  left: calc(100% - 25px - 15px);
+
+  aspect-ratio: 1 / 1;
+  width: 25px;
+
+  background-image: url("../svg/SearchIcon.svg");
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.admin-users > .user-search > .users-wrapper > li {
+  width: 100%;
+  height: 100%;
+}
+
+.admin-users > .user-search > .users-wrapper > li > .user-card-admin {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+
+  padding: 35px 50px;
+
+  background-color: white;
+  border-radius: 15px;
+}
+
+.admin-users
+  > .user-search
+  > .users-wrapper
+  > li
+  > .user-card-admin.managed {
+  background-color: #e3e3e3;
+}
+
+.admin-users
+  > .user-search
+  > .users-wrapper
+  .user-card-admin
+  > .card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+
+  text-align: center;
+
+  margin-bottom: 40px;
+}
+
+.admin-users
+  > .user-search
+  > .users-wrapper
+  .user-card-admin
+  > .card-header
+  > .role {
+  color: #9c9c9c;
+}
+
+.admin-users
+  > .user-search
+  > .users-wrapper
+  .user-card-admin
+  > .card-header
+  > .role.admin {
+  color: var(--main-color);
+}
+
+.admin-users
+  > .user-search
+  > .users-wrapper
+  .user-card-admin
+  > .card-body {
+  height: 280px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  row-gap: 18px;
+}
+
+.admin-users
+  > .user-search
+  > .users-wrapper
+  .user-card-admin
+  > .card-body
+  form {
+  display: flex;
+  flex-direction: column;
+  justify-content: inherit;
+  align-items: center;
+
+  height: 100%;
+  row-gap: inherit;
+}
+
+.admin-users
+  > .user-search
+  > .users-wrapper
+  .user-card-admin
+  > .card-body
+  textarea {
+  width: 100%;
+  height: auto;
+  font-size: 1em;
+
+  box-sizing: border-box;
+  padding: 5px;
+
+  border-radius: 7px;
+  border: none;
+
+  resize: none;
+
+  font-style: inherit;
+}
+
+.admin-users
+  > .user-search
+  > .users-wrapper
+  .user-card-admin
+  > .card-body
+  input[type="number"] {
+  font-size: 1em;
+  border: none;
+
+  padding: 0 0.5em;
+  width: 4em;
+}
+
+@media screen and (min-width: 1400px) {
+  .admin-users > .user-search > .users-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1399px) {
+  .admin-users > .user-search > .users-wrapper {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .admin-users > .user-search > .users-wrapper {
+    grid-template-columns: 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .admin-users > .user-search > .users-wrapper {
+    grid-template-columns: 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+}

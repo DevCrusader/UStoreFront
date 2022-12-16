@@ -1,13 +1,187 @@
+#root {
+  --main-color: #f89c1c;
+  --additional-color: #efd592;
+  --secondary-color: #414141;
+  --price-color: #a48158;
+  --opacity-color: #efd592;
+
+  --invisible-color: rgba(0, 0, 0, 0);
+  --background-color: #f4f4f4;
+  --header-height: 70px;
+
+  --link-main-color: #548ee5;
+  --link-hover-color: #ff5656;
+  --link-visited-color: #864dc2;
+
+  /* --udv-main-color: #54e7c3;
+  --ussc-additional-color: #00e979;
+  --udv-secondary-color: #000;
+  --udv-price-color: #366f61; */
+
+  /* --default-main-color: #4485e7;
+  --ussc-additional-color: #82abe9;
+  --default-secondary-color: #000;
+  --default-price-color: #000; */
+}
+
+@font-face {
+  font-family: "Ufo";
+  src: url("./static/font/ufo-regular-webfont.woff2") format("woff2"),
+    url("./static/font/ufo-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  font-size: 19px;
+  background: #f4f4f4;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+button {
+  font-size: 1em;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.container {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+a.pure {
+  color: var(--link-main-color);
+  transition-duration: 0.3s;
+}
+
+a.pure:hover {
+  color: var(--link-hover-color) !important;
+}
+
+a.pure:visited {
+  color: var(--link-visited-color);
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    width: 1320px;
+  }
+}
+
+@media screen and (max-width: 1399px) and (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .container {
+    width: 100%;
+  }
+}
+
+span.number-with-icon {
+  display: flex;
+  align-items: center;
+  color: var(--price-color);
+}
+
+span.number-with-icon > .price {
+  font-family: "Ufo";
+  font-size: 1.2em;
+  padding-left: 0.3em;
+}
+
+span.number-with-icon > .icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1em;
+}
+
+span.number-with-icon > .icon {
+  background-image: url("./static/svg/UsscUcoinIcon.svg");
+  background-size: 60%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+/* LOADER in CollectionLoadingState component */
+.lds-dual-ring {
+  display: inline-block;
+  aspect-ratio: 1 / 1;
+  position: relative;
+
+  --loader-color: var(--main-color);
+
+  /* width: 30px; */
+}
+
+.lds-dual-ring:after {
+  --lds-margin: 5px;
+  --lds-border: 5px;
+
+  content: " ";
+
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  padding: var(--lds-margin);
+  border-radius: 50%;
+  border: var(--lds-border) solid var(--main-color);
+
+  border-color: var(--loader-color) transparent var(--loader-color)
+    transparent;
+  animation: lds-dual-ring 2.5s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

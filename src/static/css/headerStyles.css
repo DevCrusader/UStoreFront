@@ -1,0 +1,114 @@
+.service-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 990;
+  width: 100vw;
+  height: var(--header-height);
+  background-color: white;
+  border-bottom: 2px solid var(--background-color);
+}
+
+.service-header + .post-header {
+  height: var(--header-height);
+  width: 100%;
+}
+
+.service-header > ul {
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+}
+
+.service-header > ul > li {
+  display: flex;
+  height: 100%;
+
+  align-items: center;
+  column-gap: 20px;
+}
+
+.service-header > ul > li > a {
+  color: black;
+  display: block;
+  height: 100%;
+
+  column-gap: 5px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-bottom: 2px solid var(--invisible-color);
+
+  transition-duration: 0.3s;
+}
+
+.service-header > ul > li > a:hover {
+  border-color: var(--main-color);
+}
+
+.service-header > ul > li > a > .icon {
+  display: block;
+  aspect-ratio: 1 / 1;
+  width: 35px;
+
+  background-size: auto;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.service-header > ul > li > a.store-link > .icon {
+  width: 78px;
+  height: 40px;
+
+  background-image: url("../svg/StoreIcon.svg");
+}
+
+.service-header > ul > li > a.admin-page-link > .icon {
+  background-image: url("../svg/AdminIcon.svg");
+}
+.service-header > ul > li > a.personal-page-link > .icon {
+  background-image: url("../svg/PersonalPageIcon.svg");
+}
+.service-header > ul > li > a.logout-link > .icon {
+  background-image: url("../svg/LogoutIcon.svg");
+}
+
+@media screen and (min-width: 768px) {
+  .service-header > ul {
+    padding: 0 4%;
+  }
+  .service-header > ul > li:nth-child(even) {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .service-header > ul {
+    padding: 0;
+  }
+
+  .service-header > ul > li {
+    justify-content: space-around;
+    column-gap: 0;
+  }
+
+  .service-header > ul > li > a {
+    column-gap: 0;
+  }
+
+  .service-header > ul > li > a > .text {
+    display: none;
+  }
+
+  .service-header > ul > li > a > .icon {
+    width: 78px;
+    height: 40px;
+    border-radius: 5px;
+  }
+}
