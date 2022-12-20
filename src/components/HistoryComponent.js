@@ -94,9 +94,9 @@ const HISTORY_VIEWS = {
       <ItemViewComponent
         count={item.count}
         state={
-          item.type === "Accepted"
+          item.state === "Accepted"
             ? ITEM_STATE.GREEN
-            : item.type === "Rejected"
+            : item.state === "Rejected"
             ? ITEM_STATE.RED
             : ITEM_STATE.YELLOW
         }
@@ -109,10 +109,10 @@ const HISTORY_VIEWS = {
           <>
             {item.comment}
             {item.admin_comment && (
-              <>
+              <div>
                 <br />
                 {item.admin_comment}
-              </>
+              </div>
             )}
           </>
         }
