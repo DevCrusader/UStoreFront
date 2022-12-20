@@ -12,6 +12,7 @@ import List from "../../utils/List";
 import Popup from "../../utils/Popup";
 
 import "../../static/css/adminUsersStyles.css";
+import capitalizeString from "../../utils/capitalizeString";
 
 const AdminUsers = () => {
   return (
@@ -144,17 +145,6 @@ const UserRegistration = () => {
 
 const UserSearch = () => {
   const userPerPage = 10;
-  const capitalizeString = (value) => {
-    if (typeof value !== "string") {
-      throw new TypeError("value must be a string");
-    }
-
-    if (value.length) {
-      return value[0].toUpperCase() + value.substring(1);
-    } else {
-      return value;
-    }
-  };
 
   const [userList, setUserList] = useState(null);
 

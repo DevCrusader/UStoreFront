@@ -56,6 +56,8 @@ const useFetch = (options) => {
 
     dispatch({ type: resultTypes.START_FETCH });
 
+    // setTimeout(
+    //   () =>
     axios({
       url,
       method,
@@ -84,6 +86,8 @@ const useFetch = (options) => {
           });
         }
       });
+    //   2000
+    // );
 
     return () => (cancelRequest.current = false);
   }, [options]);

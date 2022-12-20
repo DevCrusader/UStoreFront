@@ -166,7 +166,7 @@
   .current-item-choose
   input[type="radio"]:checked
   + label {
-  background-color: var(--opacity-color);
+  background-color: var(--additional-color);
 }
 
 .product-page

@@ -67,8 +67,6 @@ const useFetchWithAuth = (options) => {
   }, [error]);
 
   useEffect(() => {
-    console.log("Options changed anf updated:", updated);
-
     if (updated) {
       if (options) {
         setFetchConfig({
@@ -83,10 +81,6 @@ const useFetchWithAuth = (options) => {
       fetchHasBeenInterrupted.current = true;
       refreshTokens();
     }
-  }, [options]);
-
-  useEffect(() => {
-    console.log("Options changed!");
   }, [options]);
 
   useEffect(() => {

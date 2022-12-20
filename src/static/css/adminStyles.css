@@ -20,19 +20,19 @@
     flex-direction: column;
     padding-left: 15px;
   }
+}
 
-  .admin-wrapper
-    > .admin-navigation-container
-    > .admin-navigation
-    > li {
-    display: inline-block;
+.admin-wrapper
+  > .admin-navigation-container
+  > .admin-navigation
+  > li {
+  display: inline-block;
 
-    transition-duration: 0.3s;
-    margin: 3px 0;
+  transition-duration: 0.3s;
+  margin: 3px 0;
 
-    border-left: 2px solid;
-    border-color: var(--invisible-color);
-  }
+  border-left: 2px solid;
+  border-color: var(--invisible-color);
 }
 
 .admin-wrapper
@@ -59,53 +59,12 @@
 }
 
 @media screen and (max-width: 767px) {
-  .admin-wrapper > .admin-content {
-    margin-top: 50px;
-  }
+  .admin-navigation {
+    margin-bottom: 30px;
 
-  .admin-wrapper > .admin-navigation-container {
-    width: 100%;
-    overflow-x: auto;
-
-    padding: 15px 0;
-  }
-
-  .admin-wrapper > .admin-navigation-container > .admin-navigation {
-    padding: 0;
     display: flex;
-    column-gap: 20px;
-
-    box-sizing: border-box;
-  }
-
-  .admin-wrapper
-    > .admin-navigation-container
-    > .admin-navigation
-    > li {
-    white-space: nowrap;
-    padding-left: 0;
-  }
-
-  .admin-wrapper
-    > .admin-navigation-container
-    > .admin-navigation
-    > li:first-child {
-    padding-left: 20px;
-  }
-
-  .admin-wrapper
-    > .admin-navigation-container
-    > .admin-navigation
-    > li:last-child {
-    padding-right: 20px;
-  }
-
-  .admin-wrapper
-    > .admin-navigation-container
-    > .admin-navigation::after {
-    content: " ";
-    display: inline-block;
-    width: 15px;
+    flex-direction: column;
+    padding-left: 15px;
   }
 }
 

@@ -12,6 +12,12 @@ export const userInfoReducer = (state = initialState, action) => {
         error: null,
       };
 
+    case USER_TYPES.INFO.UPDATE_BALANCE:
+      return {
+        ...state,
+        balance: action.payload,
+      };
+
     case USER_TYPES.INFO.SET_ERROR:
       return {
         ...state,
