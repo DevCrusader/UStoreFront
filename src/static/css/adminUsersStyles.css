@@ -45,6 +45,8 @@
 
   aspect-ratio: 1 / 1;
   height: 2em;
+
+  margin-right: 0.7em;
 }
 .admin-users
   .user-registration-form

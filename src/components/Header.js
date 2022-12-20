@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 
 import "../static/css/headerStyles.css";
 import NumberWithUcoin from "../utils/NumberWithUcoin";
+import UpdateBalanceComponent from "./UpdateBalanceComponent";
 
 const Header = () => {
   return (
     <>
+      <UpdateBalanceComponent />
       <div className="service-header">
         <ul className="container">
           <li>
@@ -39,7 +41,7 @@ const HeaderAdminLink = () => {
   );
 
   if (!adminPermission) {
-    return;
+    return <span style={{ width: "78px", height: "100%" }}></span>;
   }
 
   return (
@@ -54,7 +56,7 @@ const HeaderPersonalPageLink = () => {
   const userBalance = useSelector((state) => state.user.info.balance);
 
   return (
-    <Link to={"/"} className="personal-page-link icon">
+    <Link to={"personal"} className="personal-page-link icon">
       <span className="icon"></span>
       <span className="text">
         <NumberWithUcoin number={userBalance ? userBalance : 0} />

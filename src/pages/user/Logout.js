@@ -10,7 +10,7 @@ const Logout = () => {
   const { clearUserTokens } = useContext(AuthContext);
   const dispatch = useDispatch();
 
-  const location = useLocation();
+  const { state } = useLocation();
 
   useEffect(() => {
     clearUserTokens();
@@ -22,17 +22,31 @@ const Logout = () => {
 
   // FIXME: add logout logic
   return (
-    <div>
-      Logout PAGE
-      <ul>
-        <li>
-          <Link to="/store">Store</Link>
-        </li>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-      </ul>
-      <div>{JSON.stringify(location)}</div>
+    <div
+      className="container logout-page"
+      style={{
+        marginTop: "15vh",
+        maxWidth: "540px",
+        display: "flex",
+        flexDirection: "column",
+        rowGap: "20px",
+      }}
+    >
+      <h1>Вы вышли из сервиса.</h1>
+      <div style={{ fontSize: "1.2em" }}>
+        <Link to="/login">Страница авторизации</Link>
+      </div>
+
+      {state && (
+        <div style={{ color: "#CE6F6F" }}>
+          Возникла ошибка авторизации. Причина: &quot;{state.reason}
+          &quot;.
+          <br />
+          <br />
+          Перейдите на страницу логина, чтобы авторизоваться повторно,
+          или обратитесь к _кому-то_.
+        </div>
+      )}
     </div>
   );
 };

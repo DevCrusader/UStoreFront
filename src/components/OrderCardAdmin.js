@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { BACKEND_PATH, FETCH_METHOD } from "../Consts";
 import List from "../utils/List";
 import useFetchWithAuth from "../hooks/useFetchWithAuth";
+import { useSelector } from "react-redux";
+import UpdateBalanceComponent from "./UpdateBalanceComponent";
 
 const OrderCardAdmin = ({ order }) => {
   const orderStateTypes = {
@@ -10,6 +12,8 @@ const OrderCardAdmin = ({ order }) => {
     COMPLETED: "Completed",
     CANCELED: "Canceled",
   };
+
+  const { user_id: userId } = useSelector((state) => state.user.info);
 
   const [fetchConfig, setFetchConfig] = useState({});
   const { loading, error, data } = useFetchWithAuth(fetchConfig);
@@ -257,6 +261,9 @@ const OrderCardAdmin = ({ order }) => {
           cancellationView ? "visible" : "unvisible"
         }`}
       >
+        {orderInfo.customer_id == userId && (
+          <UpdateBalanceComponent />
+        )}
         <form onSubmit={cancelOrder}>
           <div className="body">
             <div

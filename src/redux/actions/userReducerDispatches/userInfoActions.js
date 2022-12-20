@@ -14,6 +14,13 @@ export function setUserError(error) {
   };
 }
 
+export function updateUserBalance(newBalance) {
+  return {
+    type: USER_TYPES.INFO.UPDATE_BALANCE,
+    payload: newBalance,
+  };
+}
+
 export const clearUserInfo = () => {
   return {
     type: USER_TYPES.INFO.CLEAR,

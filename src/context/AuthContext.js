@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 import { BACKEND_PATH, TOKEN_LIFE_TIME } from "../Consts";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import jwtDecode from "jwt-decode";
@@ -36,8 +36,6 @@ export const AuthProvider = ({ children }) => {
 
   const refreshTokens = async () => {
     if (updated) {
-      console.log("Token was updated a few time ago.");
-
       return navigate("/logout", {
         state: {
           pathname: window.location.pathname,
@@ -47,15 +45,17 @@ export const AuthProvider = ({ children }) => {
     }
 
     if (!userTokens) {
-      throw new Error("User tokens is undefined!");
+      return navigate("/logout", {
+        state: {
+          pathname: window.location.pathname,
+          reason: `Токены не найдены, неоходимо повторно авторизоваться.`,
+        },
+      });
     }
-
-    console.log("REFRESHING:", refreshing.current);
 
     if (refreshing.current)
       return console.log("Wait for the token to updated.");
 
-    console.log("Start Refreshing.");
     refreshing.current = true;
 
     await axios
@@ -65,7 +65,12 @@ export const AuthProvider = ({ children }) => {
       .then((res) => setUserTokens(res.data))
       .catch((err) => {
         if (err.response.status === 401) {
-          clearUserTokens();
+          return navigate("/logout", {
+            state: {
+              pathname: window.location.pathname,
+              reason: `Refresh окен устарел, неоходимо повторно авторизоваться.`,
+            },
+          });
         } else {
           setServerError(err.message);
         }
@@ -73,8 +78,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   const clearUserTokens = () => {
-    console.log("ASIUdhaiuoshdi HWIERUhoiuhe!1!GUyfuf");
-
     localStorage.removeItem(TOKEN_KEY_IN_STORAGE);
 
     setUserTokens(null);
@@ -162,6 +165,9 @@ export const AuthProvider = ({ children }) => {
           }}
         >
           {JSON.stringify(serverError)}
+          <br />
+          Перейдите по <Link to="/logout">ссылке</Link>, чтобы выйти
+          из сервиса, и попробуйте авторизоваться ещё раз.
         </div>
       )}
     </AuthContext.Provider>

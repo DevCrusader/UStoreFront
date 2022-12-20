@@ -18,7 +18,7 @@ const UserCardAdmin = ({ user }) => {
   const [userInfo, setUserInfo] = useState(user);
 
   if (!userInfo) {
-    return <div>Pizdec....</div>;
+    return <div>Нет информации.</div>;
   }
 
   const [fetchConfig, setFetchConfig] = useState({});

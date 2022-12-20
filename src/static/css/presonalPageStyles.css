@@ -1,0 +1,81 @@
+.promo-part > .header {
+  height: 80vh;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50%;
+}
+
+.promo-part > .banner {
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+@media screen and (min-width: 992px) {
+  .promo-part > .header {
+    background-image: url("../svg/Header-decoration-horizontal.svg");
+  }
+
+  .promo-part > .banner {
+    aspect-ratio: 5 / 2;
+    background-size: contain;
+  }
+
+  .promo-part > .banner.curator {
+    background-image: url("../svg/Banner-decoration-horizontal-curator.svg");
+  }
+
+  .promo-part > .banner.social {
+    background-image: url("../svg/Banner-decoration-horizontal-social.svg");
+  }
+
+  .promo-part > .banner.event {
+    background-image: url("../svg/Banner-decoration-horizontal-event.svg");
+  }
+
+  .promo-part > .banner.good {
+    background-image: url("../svg/Banner-decoration-horizontal-good.svg");
+  }
+
+  .promo-part > .banner.flag {
+    background-image: url("../svg/Banner-decoration-horizontal-flag.svg");
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .promo-part > .header {
+    height: 50vh;
+
+    background-image: url("../svg/Header-decoration-horizontal.svg");
+    background-size: 95%;
+  }
+
+  .promo-part > .banner {
+    aspect-ratio: 7 / 9.3;
+
+    background-size: contain;
+  }
+
+  .promo-part > .banner.curator {
+    background-image: url("../svg/Banner-decoration-vertical-curator.svg");
+  }
+
+  .promo-part > .banner.social {
+    background-image: url("../svg/Banner-decoration-vertical-social.svg");
+  }
+
+  .promo-part > .banner.event {
+    background-image: url("../svg/Banner-decoration-vertical-event.svg");
+  }
+
+  .promo-part > .banner.good {
+    background-image: url("../svg/Banner-decoration-vertical-good.svg");
+  }
+
+  .promo-part > .banner.flag {
+    background-image: url("../svg/Banner-decoration-vertical-flag.svg");
+  }
+}

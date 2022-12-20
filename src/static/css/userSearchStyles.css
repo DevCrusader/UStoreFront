@@ -1,0 +1,75 @@
+.user-search {
+  position: relative;
+}
+
+.user-search > img.search-icon {
+  aspect-ratio: 1 / 1;
+  width: 25px;
+
+  object-position: 50%;
+  object-fit: contain;
+
+  position: absolute;
+  top: calc(10px + 1em / 2 - 10px);
+  left: calc(100% - 25px - 7.5px);
+}
+
+.user-search > .after-block {
+  position: absolute;
+  top: calc(10px + 10px + 1em);
+
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid black;
+
+  background-color: white;
+
+  padding: 10px 15px;
+
+  border-radius: 0 0 15px 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-search > input[type="text"] {
+  border: none;
+  outline: none;
+
+  border-radius: 15px 15px 0 0;
+  border: 1px solid black;
+
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
+
+  padding: 10px 15px;
+  padding-right: 40px;
+
+  color: black;
+}
+
+.user-search > input[type="text"]:placeholder-shown {
+  border-radius: 15px;
+}
+
+.user-search > .after-block > .result {
+  width: 100%;
+}
+
+.user-search > .after-block > .result > li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-search > .after-block > .result > li:hover {
+  background-color: #f6f6f6;
+
+  cursor: pointer;
+}
+
+.user-search > .after-block > .result > li:not(:last-child) {
+  margin-bottom: 10px;
+}

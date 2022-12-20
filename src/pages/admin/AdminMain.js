@@ -6,7 +6,6 @@ import {
   useLocation,
   useNavigate,
 } from "react-router-dom";
-import PropTypes from "prop-types";
 
 import "../../static/css/adminStyles.css";
 // import axios from "axios";
@@ -55,13 +54,6 @@ const AdminMain = () => {
           </li>
           <li
             className={`admin-action ${
-              currentBlock === "products" ? "current" : ""
-            }`}
-          >
-            <Link to="/admin/products">Управление товарами</Link>
-          </li>
-          <li
-            className={`admin-action ${
               currentBlock === "users" ? "current" : ""
             }`}
           >
@@ -77,31 +69,3 @@ const AdminMain = () => {
 };
 
 export default AdminMain;
-
-// const Notification = ({ model }) => {
-//   // FIXME: may be add some websockets;
-
-//   const [count, setCount] = useState(0);
-
-//   useEffect(() => {
-//     (async () => {
-//       try {
-//         const response = await axios.get(
-//           `${BACKEND_PATH}/user/new-${model}/`
-//         );
-
-//         if (response.status === 200) {
-//           setCount(response.data);
-//         }
-//       } catch (err) {
-//         console.log("Err:", err);
-//       }
-//     })();
-//   }, []);
-
-//   return <>{count && <></>}</>;
-// };
-
-Notification.propTypes = {
-  model: PropTypes.string.isRequired,
-};

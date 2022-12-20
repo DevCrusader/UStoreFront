@@ -160,7 +160,7 @@ const AuthorizationComponent = () => {
         loginUser({ access: data.access, refresh: data.refresh });
 
         setTimeout(() => {
-          navigate("/store/");
+          navigate("/personal");
         }, 1500);
       }
     }

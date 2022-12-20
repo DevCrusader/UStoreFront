@@ -1,0 +1,214 @@
+.personal-part .request-popup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  row-gap: 10px;
+}
+
+.personal-part .request-popup form > label {
+  width: 100%;
+}
+
+.personal-part .request-popup form > label > input,
+.personal-part .request-popup form > label > textarea {
+  border: none;
+  outline: none;
+
+  border-radius: 5px;
+
+  display: block;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  font-size: 1em;
+
+  padding: 15px 20px;
+
+  background-color: #f6f6f6;
+  resize: none;
+}
+
+.personal-part .request-popup button {
+  appearance: none;
+  border: none;
+
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px 0;
+
+  margin-top: 3vh;
+
+  transition-duration: 0.5s;
+}
+
+.personal-part .request-popup button[type="submit"] {
+  background-color: var(--additional-color);
+  color: white;
+}
+
+.personal-part .request-popup button[type="submit"]:hover {
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+
+.personal-part .request-popup button.back {
+  background-color: #f6f6f6;
+  color: #585858;
+}
+.personal-part .request-popup button.back:hover {
+  background-color: #c3c3c3;
+  cursor: pointer;
+}
+
+.personal-part > .balance-part {
+  background-color: white;
+  border-radius: 15px;
+
+  padding: 40px 0;
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.5em;
+}
+
+.personal-part > .manage-part {
+  display: grid;
+
+  margin: 40px 0;
+}
+
+.personal-part > .manage-part > button {
+  appearance: none;
+  border: none;
+  border-radius: 15px;
+
+  background-color: #ebebeb;
+  color: #bbbbbb;
+
+  aspect-ratio: 3 / 4;
+  justify-self: center;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 20% 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition-duration: 0.5s;
+}
+
+.personal-part > .manage-part > button > img {
+  aspect-ratio: 1 / 1;
+  width: 60%;
+
+  filter: grayscale(1);
+
+  transition-duration: 0.5s;
+}
+
+.personal-part > .manage-part > button.history-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.personal-part > .manage-part > button.gift-btn:hover {
+  background-color: #f59d0e;
+  color: black;
+}
+
+.personal-part > .manage-part > button.request-btn:hover {
+  background-color: #57585a;
+  color: white;
+}
+
+.personal-part > .manage-part > button:hover > img {
+  filter: none;
+}
+
+.personal-part > .manage-part > button.gift-btn.accept > img {
+  animation-name: druging;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes druging {
+  0% {
+    transform: rotate(0);
+  }
+
+  20% {
+    transform: rotate(5deg);
+  }
+
+  40% {
+    transform: rotate(-5deg);
+  }
+
+  60% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .personal-part > .balance-part > .balance {
+    font-size: 5em;
+  }
+
+  .personal-part > .manage-part {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 3%;
+  }
+
+  .personal-part > .manage-part > button {
+    font-size: 1.4em;
+
+    row-gap: 15%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .personal-part > .balance-part > .balance {
+    font-size: 5em;
+  }
+
+  .personal-part > .manage-part {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 3%;
+  }
+
+  .personal-part > .manage-part > button {
+    font-size: 1.1em;
+
+    row-gap: 10%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .personal-part > .balance-part > .balance {
+    font-size: 3em;
+  }
+
+  .personal-part > .manage-part {
+    grid-template-columns: 1fr;
+    column-gap: 3%;
+    row-gap: 20px;
+  }
+
+  .personal-part > .manage-part > button {
+    width: 95%;
+    font-size: 1.5em;
+
+    row-gap: 15%;
+  }
+}
