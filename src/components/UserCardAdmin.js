@@ -230,7 +230,6 @@ const UserCardAdmin = ({ user }) => {
                         : 200
                     }
                     min={"1"}
-                    step={"0.5"}
                     defaultValue={"1"}
                   />
                 }

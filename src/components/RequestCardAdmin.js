@@ -114,8 +114,7 @@ const RequestCardAdmin = ({ request }) => {
           <NumberWithUcoin
             number={
               <input
-                min={cardView === cardViewTypes.ACCEPTED ? 0.5 : 0}
-                step="0.5"
+                min={cardView === cardViewTypes.ACCEPTED ? 1 : 0}
                 type={"number"}
                 defaultValue={requestInfo.count}
                 readOnly={
