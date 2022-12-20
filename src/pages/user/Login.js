@@ -40,7 +40,7 @@ const SelfRegisterComponent = () => {
 
     const { "user-name": userName, secretWord } = e.target;
 
-    const { lastName, firstName, patronymic } =
+    const [lastName, firstName, patronymic] =
       userName.value.split(" ");
 
     setFetchConfig({
