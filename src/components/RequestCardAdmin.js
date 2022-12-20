@@ -123,6 +123,7 @@ const RequestCardAdmin = ({ request }) => {
                   error
                 }
                 name="count"
+                disabled={cardView !== cardViewTypes.ACCEPTED}
                 required={cardView === cardViewTypes.ACCEPTED}
               />
             }
@@ -167,7 +168,7 @@ const RequestCardAdmin = ({ request }) => {
             </>
           ) : cardView === cardViewTypes.READONLY ? (
             <div className="state">
-              Заказ был{" "}
+              Запрос был{" "}
               {requestInfo.state === requestStateTypes.ACCEPTED
                 ? "Одобрен"
                 : requestInfo.state === requestStateTypes.REJECTED
