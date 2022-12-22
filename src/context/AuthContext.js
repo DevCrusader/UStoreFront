@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }) => {
           return navigate("/logout", {
             state: {
               pathname: window.location.pathname,
-              reason: `Refresh окен устарел, неоходимо повторно авторизоваться.`,
+              reason: `Refresh токен устарел, неоходимо повторно авторизоваться.`,
             },
           });
         } else {
@@ -99,8 +99,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    console.log("FINISH Refreshing.");
-    console.log("USERTOKENS:", userTokens);
     refreshing.current = false;
 
     if (userTokens && userTokens?.access && userTokens?.refresh) {

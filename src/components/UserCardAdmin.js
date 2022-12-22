@@ -229,7 +229,8 @@ const UserCardAdmin = ({ user }) => {
                         ? userInfo.balance
                         : 200
                     }
-                    min={"1"}
+                    min={"0.5"}
+                    step={"0.5"}
                     defaultValue={"1"}
                   />
                 }
@@ -242,7 +243,7 @@ const UserCardAdmin = ({ user }) => {
                 className="close"
                 onClick={() => setCardView(cardViewTypes.DEFAULT)}
               >
-                Закрыть это
+                Закрыть
               </button>
             </form>
           </>

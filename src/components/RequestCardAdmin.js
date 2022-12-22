@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import useFetchWithAuth from "../hooks/useFetchWithAuth";
 import NumberWithUcoin from "../utils/NumberWithUcoin";
@@ -28,6 +28,7 @@ const RequestCardAdmin = ({ request }) => {
   const { loading, error, data } = useFetchWithAuth(fetchConfig);
 
   const [cardView, setCardView] = useState(cardViewTypes.DEFAULT);
+  const requestCountRef = useRef(null);
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -59,10 +60,16 @@ const RequestCardAdmin = ({ request }) => {
     }
   }, [requestInfo]);
 
+  useEffect(() => {
+    if (cardView !== cardViewTypes.ACCEPTED) {
+      requestCountRef.current.value = requestInfo.count;
+    }
+  }, [cardView]);
+
   return (
     <div className={`request-card-admin`}>
       <div className="header">
-        <span className="name">Заказ #{requestInfo.id}</span>
+        <span className="name">Запрос #{requestInfo.id}</span>
         <span className="reason">{requestInfo.header}</span>
       </div>
       <div className="customer-body">
@@ -114,7 +121,9 @@ const RequestCardAdmin = ({ request }) => {
           <NumberWithUcoin
             number={
               <input
-                min={cardView === cardViewTypes.ACCEPTED ? 1 : 0}
+                min={cardView === cardViewTypes.ACCEPTED ? 0.5 : 0}
+                ref={requestCountRef}
+                step={"0.5"}
                 type={"number"}
                 defaultValue={requestInfo.count}
                 readOnly={
@@ -184,7 +193,7 @@ const RequestCardAdmin = ({ request }) => {
             cardView === cardViewTypes.ACCEPTED ? (
             <div className="danger">
               <span>
-                Заказ будет{" "}
+                Запрос будет{" "}
                 {cardView === cardViewTypes.ACCEPTED
                   ? "Одобрен"
                   : cardView === cardViewTypes.REJECTED

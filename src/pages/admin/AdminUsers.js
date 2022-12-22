@@ -17,7 +17,6 @@ import capitalizeString from "../../utils/capitalizeString";
 const AdminUsers = () => {
   return (
     <div className="admin-users">
-      {/* <header>Управление пользователями.</header> */}
       <UserRegistration />
       <UserSearch />
     </div>
@@ -52,10 +51,6 @@ const UserRegistration = () => {
       },
     });
   };
-
-  useEffect(() => {
-    if (data) console.log("DATA:", data);
-  }, [data]);
 
   return (
     <>
@@ -144,7 +139,7 @@ const UserRegistration = () => {
 };
 
 const UserSearch = () => {
-  const userPerPage = 10;
+  const userPerPage = 6;
 
   const [userList, setUserList] = useState(null);
 
@@ -170,7 +165,7 @@ const UserSearch = () => {
 
     const trimmedSearch = search.trim();
 
-    if (isVisible && trimmedSearch) {
+    if (isVisible && trimmedSearch && !fetchIsLastRef.current) {
       const currentLength = Array.isArray(userList)
         ? userList.length
         : 0;
@@ -202,9 +197,7 @@ const UserSearch = () => {
 
   useEffect(() => {
     if (data && Array.isArray(data)) {
-      if (data.length < userPerPage) {
-        fetchIsLastRef.current = true;
-      }
+      fetchIsLastRef.current = data.length < userPerPage;
 
       if (userList) {
         setUserList([...userList, ...data]);
@@ -228,7 +221,7 @@ const UserSearch = () => {
       </div>
       {search ? (
         <>
-          {userList ? (
+          {userList && (
             <List
               data={userList}
               renderItem={(item) => <UserCardAdmin user={item} />}
@@ -239,34 +232,34 @@ const UserSearch = () => {
               }
               listClassName={"users-wrapper"}
             />
-          ) : (
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                height: "100px",
-              }}
-            >
-              {loading ? (
-                <div
-                  className="lds-dual-ring"
-                  style={{ width: "80px", height: "80px" }}
-                ></div>
-              ) : error ? (
-                <pre style={{ color: "red" }}>
-                  {JSON.stringify(error, null, 2)}
-                </pre>
-              ) : !fetchIsLastRef.current ? (
-                <div
-                  className="lds-dual-ring additional-fetch"
-                  style={{ width: "80px", height: "80px" }}
-                  ref={containerRef}
-                ></div>
-              ) : (
-                <div>Все запросы были загружены.</div>
-              )}
-            </div>
           )}
+
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              height: "100px",
+            }}
+          >
+            {loading ? (
+              <div
+                className="lds-dual-ring"
+                style={{ width: "80px", height: "80px" }}
+              ></div>
+            ) : error ? (
+              <pre style={{ color: "red" }}>
+                {JSON.stringify(error, null, 2)}
+              </pre>
+            ) : !fetchIsLastRef.current ? (
+              <div
+                className="lds-dual-ring additional-fetch"
+                style={{ width: "80px", height: "80px" }}
+                ref={containerRef}
+              ></div>
+            ) : (
+              <div>Все пользователи были загружены.</div>
+            )}
+          </div>
         </>
       ) : (
         <div className="instruction">

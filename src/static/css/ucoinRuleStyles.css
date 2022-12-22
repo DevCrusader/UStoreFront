@@ -1,0 +1,51 @@
+.ucoins-rules > header {
+  font-size: 1.2em;
+  font-weight: 700;
+
+  margin: 20px 0;
+}
+
+.ucoins-rules > .rules {
+  display: grid;
+  grid-template-columns: 100px auto;
+  margin-top: 20px;
+
+  border: 1px solid var(--additional-color);
+}
+
+.ucoins-rules > .rules > div {
+  border-top: 1px solid var(--additional-color);
+  border-bottom: 1px solid var(--additional-color);
+}
+
+.ucoins-rules > .rules > .col-1 {
+  grid-column: 1 / 1;
+  text-align: center;
+
+  border-right: 1px solid var(--additional-color);
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.ucoins-rules > .rules > .col-2 {
+  grid-column: 2 / 2;
+
+  padding: 5px 10px;
+}
+
+.ucoins-rules ul > li {
+  margin: 5px 0;
+}
+
+.ucoins-rules > ul.important {
+  list-style-type: disc;
+  padding-left: 30px;
+
+  margin-bottom: 50px;
+}
+
+.ucoins-rules > ul.important ul {
+  list-style-type: circle;
+  padding-left: 20px;
+}

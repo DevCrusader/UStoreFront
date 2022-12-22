@@ -119,10 +119,9 @@ const OrdersComponent = () => {
             ) : !fetchIsLastRef.current ? (
               <div
                 className="lds-dual-ring additional-fetch"
+                style={{ height: "80%" }}
                 ref={containerRef}
-              >
-                Try to load another orders.
-              </div>
+              ></div>
             ) : (
               <div>Все заказы были загружены.</div>
             )}

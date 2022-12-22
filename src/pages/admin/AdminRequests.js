@@ -142,7 +142,10 @@ const RequestsComponent = () => {
             }}
           >
             {loading ? (
-              <div className="lds-dual-ring">Loading....</div>
+              <div
+                className="lds-dual-ring"
+                style={{ height: "80%" }}
+              ></div>
             ) : error ? (
               <pre style={{ color: "red" }}>
                 {JSON.stringify(error, null, 2)}
@@ -150,10 +153,9 @@ const RequestsComponent = () => {
             ) : !fetchIsLastRef.current ? (
               <div
                 className="lds-dual-ring additional-fetch"
+                style={{ height: "80%" }}
                 ref={containerRef}
-              >
-                Try to load another requests.
-              </div>
+              ></div>
             ) : (
               <div>Все запросы были загружены.</div>
             )}
@@ -177,7 +179,7 @@ const RequestsComponent = () => {
               {JSON.stringify(error, null, 2)}
             </pre>
           ) : (
-            <div>Не удалось загрузить заказы.</div>
+            <div>Не удалось загрузить запросы.</div>
           )}
         </div>
       )}
