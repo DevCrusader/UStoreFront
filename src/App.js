@@ -7,7 +7,6 @@ import Product from "./pages/store/Product";
 import Store from "./pages/store/Store";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
 import Logout from "./pages/user/Logout";
-import Test from "./pages/Test";
 import Confirm from "./pages/store/Confirm";
 import AdminMain from "./pages/admin/AdminMain";
 import AdminOrders from "./pages/admin/AdminOrders";
@@ -16,6 +15,7 @@ import AdminUsers from "./pages/admin/AdminUsers";
 import Order from "./pages/store/Order";
 import PersonalPage from "./pages/user/PersonalPage";
 import AccessErrorPage from "./pages/error/AccessErrorPage";
+import UcoinRules from "./pages/user/UcoinRules";
 
 const App = () => {
   return (
@@ -27,7 +27,7 @@ const App = () => {
         <Route element={<ProtectedRoutes />}>
           <Route path="" element={<Navigate to={"personal"} />} />
 
-          <Route path="test" element={<Test />} />
+          <Route path="ucoin-rule" element={<UcoinRules />} />
           <Route path="personal" element={<PersonalPage />} />
 
           <Route path="store" element={<Store />} />

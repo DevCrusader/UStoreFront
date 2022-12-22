@@ -19,7 +19,7 @@ const HISTORY_VIEWS = {
           Все
         </option>
         <option value="Replenishments">Пополнения</option>
-        <option value="Write_off">Списания</option>
+        <option value="Write_offs">Списания</option>
       </>
     ),
     renderItem: (item) => (

@@ -23,6 +23,7 @@ const useFetchWithAuth = (options) => {
 
   const { userTokens, updated, refreshTokens } =
     useContext(AuthContext);
+
   const [result, dispatch] = useReducer(
     (state = initialState, action) => {
       switch (action.type) {

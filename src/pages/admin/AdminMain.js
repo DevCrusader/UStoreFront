@@ -8,8 +8,6 @@ import {
 } from "react-router-dom";
 
 import "../../static/css/adminStyles.css";
-// import axios from "axios";
-// import { BACKEND_PATH } from "../../Consts";
 
 const AdminMain = () => {
   const adminPermission = useSelector(
@@ -42,7 +40,6 @@ const AdminMain = () => {
             }`}
           >
             <Link to="/admin/orders">Заказы</Link>
-            {/* <Notification model={"orders"} /> */}
           </li>
           <li
             className={`customers-action ${
@@ -50,7 +47,6 @@ const AdminMain = () => {
             }`}
           >
             <Link to="/admin/requests">Запросы</Link>
-            {/* <Notification model={"requests"} /> */}
           </li>
           <li
             className={`admin-action ${

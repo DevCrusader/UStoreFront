@@ -86,7 +86,7 @@ const useFetch = (options) => {
           });
         }
       });
-    //   2000
+    //   100 * 2000
     // );
 
     return () => (cancelRequest.current = false);
