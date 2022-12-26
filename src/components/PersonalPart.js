@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Popup from "../utils/Popup";
 
 import "../static/css/personalPartStyles.css";
@@ -29,11 +29,48 @@ const PersonalPart = () => {
         <GiftComponent />
         <RequestComponent />
       </div>
+
+      <HintComponent />
     </div>
   );
 };
 
 export default PersonalPart;
+
+const HintComponent = () => {
+  const hintRef = useRef(null);
+
+  useEffect(() => {
+    const scrollHandler = () => {
+      if (window.scrollY > 200) {
+        hintRef.current.classList.add("hidden");
+      } else {
+        hintRef.current.classList.remove("hidden");
+      }
+    };
+
+    window.addEventListener("scroll", scrollHandler);
+
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, []);
+  return (
+    <div className="hint" ref={hintRef}>
+      <span className="icon">
+        <img
+          className="outer"
+          alt={"Mouse"}
+          src={require("../static/svg/HintMouseIcon.svg").default}
+        />
+        <img
+          className="inner"
+          alt={"Scroll"}
+          src={require("../static/svg/HintScrollIcon.svg").default}
+        />
+      </span>
+      <span>Чтобы узнать про юкойны</span>
+    </div>
+  );
+};
 
 const BalanceHistory = () => {
   const [opened, setOpened] = useState();

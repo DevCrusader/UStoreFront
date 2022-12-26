@@ -212,3 +212,61 @@
     row-gap: 15%;
   }
 }
+
+.personal-part > .hint {
+  position: fixed;
+  bottom: 10px;
+  left: calc(50% - 175px);
+
+  background-color: white;
+  padding: 20px 35px;
+
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+
+  border-radius: 47px;
+
+  transition-duration: 0.5s;
+}
+
+.personal-part > .hint.hidden {
+  transform: translateY(25vh);
+}
+
+.personal-part > .hint > .icon {
+  position: relative;
+}
+
+.personal-part > .hint > .icon > .outer {
+  width: 22px;
+  height: 34px;
+  object-fit: cover;
+}
+
+.personal-part > .hint > .icon > .inner {
+  position: absolute;
+  width: 15%;
+
+  top: 7px;
+  left: calc(50% - 1px);
+
+  animation-name: scrolled;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes scrolled {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(2px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
