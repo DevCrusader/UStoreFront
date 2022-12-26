@@ -1,3 +1,7 @@
+.promo-part {
+  margin-bottom: 50px;
+}
+
 .promo-part > .header {
   height: 80vh;
 
@@ -78,4 +82,20 @@
   .promo-part > .banner.flag {
     background-image: url("../svg/Banner-decoration-vertical-flag.svg");
   }
+}
+
+.promo-part > .rule-link {
+  width: 100%;
+  text-align: center;
+}
+
+.promo-part > .rule-link > a,
+.promo-part > .rule-link > a:visited {
+  color: var(--additional-color);
+  transition-duration: 0.3s;
+}
+
+.promo-part > .rule-link > a:hover {
+  cursor: pointer;
+  color: var(--main-color);
 }
