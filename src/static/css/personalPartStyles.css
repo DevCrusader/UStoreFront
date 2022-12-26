@@ -230,6 +230,12 @@
   transition-duration: 0.5s;
 }
 
+@media screen and (max-width: 767px) {
+  .personal-part > .hint {
+    display: none;
+  }
+}
+
 .personal-part > .hint.hidden {
   transform: translateY(25vh);
 }
