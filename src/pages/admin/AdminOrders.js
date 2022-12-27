@@ -123,7 +123,9 @@ const OrdersComponent = () => {
                 ref={containerRef}
               ></div>
             ) : (
-              <div>Все заказы были загружены.</div>
+              <div style={{ color: "#D9D9D9", margin: "30px 0" }}>
+                Все заказы были загружены.
+              </div>
             )}
           </div>
         </>

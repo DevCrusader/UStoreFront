@@ -288,11 +288,11 @@ const FetchDataComponent = ({ filters }) => {
               <div
                 className="lds-dual-ring additional-fetch"
                 ref={containerRef}
-              >
-                Try to load another data.
-              </div>
+              ></div>
             ) : (
-              <div>Вся информация была загружена.</div>
+              <div style={{ color: "#D9D9D9", margin: "30px 0 0" }}>
+                Вся информация была загружена.
+              </div>
             )}
           </div>
         </>

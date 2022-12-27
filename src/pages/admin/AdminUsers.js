@@ -56,6 +56,7 @@ const UserRegistration = () => {
     <>
       <button
         onClick={() => setOpened(true)}
+        style={{ padding: "15px 0" }}
         className="user-registration complete"
       >
         + Зарегистрировать нового пользователя
@@ -257,7 +258,9 @@ const UserSearch = () => {
                 ref={containerRef}
               ></div>
             ) : (
-              <div>Все пользователи были загружены.</div>
+              <div style={{ color: "#D9D9D9", margin: "30px 0" }}>
+                Все пользователи были загружены.
+              </div>
             )}
           </div>
         </>

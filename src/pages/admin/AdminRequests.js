@@ -157,7 +157,9 @@ const RequestsComponent = () => {
                 ref={containerRef}
               ></div>
             ) : (
-              <div>Все запросы были загружены.</div>
+              <div style={{ color: "#D9D9D9", margin: "30px 0" }}>
+                Все запросы были загружены.
+              </div>
             )}
           </div>
         </>

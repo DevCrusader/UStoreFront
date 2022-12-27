@@ -52,7 +52,7 @@ const Order = () => {
             <span className="address col-2">
               {state && state.orderInfo && state.orderInfo.address
                 ? state.orderInfo.address
-                : "Адресс заказа"}
+                : "Адрес заказа"}
             </span>
 
             <img

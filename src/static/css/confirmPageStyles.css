@@ -9,6 +9,10 @@
   grid-area: cart;
 }
 
+.confirm-page > .cart-wrapper .cart-item img {
+  border-radius: 10px;
+}
+
 .confirm-page > .cart-wrapper.loading {
   display: flex;
   flex-direction: column;
@@ -130,7 +134,7 @@
 }
 
 .confirm-page > .confirm-menu > .addresses-wrapper::before {
-  content: "Адресс доставки";
+  content: "Адрес доставки";
   display: block;
   color: var(--secondary-color);
   opacity: 0.5;
